@@ -1,0 +1,76 @@
+" enable Pathogen plugin manager
+runtime ~/.vim/autoload/pathogen.vim
+execute pathogen#infect()
+
+" needed for file-specific plugins to work, see below
+filetype plugin on
+filetype indent on
+
+syntax on
+set hlsearch
+set path+=./**
+set makeprg=build
+set smartcase
+set ff=unix
+set tabstop=4
+set expandtab
+set number
+set colorcolumn=80
+hi ColorColumn ctermbg=0
+
+" highlight spurious whitespace before the linter does
+highlight ExtraWhitespace ctermbg=lightgreen guibg=lightgreen                   
+match ExtraWhitespace /\s\+$/  
+
+""Format on save using Prettier
+autocmd BufWrite Pre *.js,*.jsx,*.ts,*.tsx Neoformat
+" Use formatprg when available
+let g:neoformat_try_formatprg = 1
+
+let g:ackprg = 'ag --nogroup --nocolor --column --vimgrep'
+let g:lightline = {
+  \     'active': {
+  \         'left': [['mode', 'paste' ], ['readonly', 'filename', 'modified']],
+  \         'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
+  \     }
+  \ }
+
+" Set cscope settings
+set cscopetag "Use :cstag instead of :tag, ...
+set csto=1 " ... but search tags before cscope
+
+" Add an F7 key mapping to refresh cscope:
+map <F7> :!cscope -R -b -q <CR>
+   \:cscope reset<CR>
+
+if has("cscope")
+    if filereadable("cscope.out")
+        cs add cscope.out
+    endif
+    if filereadable("pycscope.out")
+        cs add pycscope.out
+    endif
+    cs reset
+endif
+
+let g:python_highlight_all = 1
+
+" Set lightline.vim configuration
+set laststatus=2
+
+" backups are a little silly when you're using patches constantly
+set nobackup
+set noswapfile
+
+" Tabs
+set expandtab
+set shiftwidth=4 " Indent by 4
+set smarttab
+
+" Custom mappings
+nnoremap ,<space> :nohlsearch<CR>
+nnoremap <F8> :checktime<CR>
+
+" Set custom vim commands
+command Swd cd %:h
+command Ssd cd ~/src

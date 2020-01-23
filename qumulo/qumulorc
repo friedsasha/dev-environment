@@ -1,0 +1,6 @@
+{
+    "build_default_options": {
+    "nfs_cache": "true"
+    },
+    "build_progress": "colored"
+}
