@@ -114,6 +114,9 @@ nnoremap ,<space> :nohlsearch<CR>
 nnoremap <F8> :checktime<CR>
 map <F4> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 
+set relativenumber
+nnoremap <F5> :set relativenumber!<CR>:set rnu?<CR>
+
 " Tags
 set tags+=tags
 source ~/src/tools/editors/vim/plugin/cscope_maps.vim
