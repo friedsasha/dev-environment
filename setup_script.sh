@@ -13,3 +13,4 @@ ln -s $parent_path/vim/vimrc ~/.vimrc
 
 ln -s $parent_path/bash/bash_aliases ~/.bash_aliases
 ln -s $parent_path/zsh/zshrc ~/.zshrc
+ln -s $parent_path/zsh/zshrc.pre-oh-my-zsh ~/.zshrc.pre-oh-my-zsh
