@@ -24,6 +24,8 @@ Plug 'rking/ag.vim'
 Plug 'ervandew/supertab'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ludovicchabant/vim-lawrencium'
+Plug 'itchyny/lightline.vim'
+Plug 'vim-python/python-syntax'
 
 " Initialize plugin system
 call plug#end()
