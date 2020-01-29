@@ -108,6 +108,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
 alias ssh-dq8='ssh -t sfriedrich@dq8-c-10g bash -l'
 alias rm-remnants='tools/rm_merge_remnants.sh'
 alias br='cd ~/ && source /home/sasha/.zshrc'
