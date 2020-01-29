@@ -4,3 +4,5 @@ alias src='cd ~/src'
 # internal tools
 alias np='~/tools/next-patch'
 alias npp='~/tools/next-patch --prev'
+
+alias ssh-sihang='ssh guest@192.168.194.107'
