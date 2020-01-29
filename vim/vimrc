@@ -1,26 +1,78 @@
-" enable Pathogen plugin manager
-runtime ~/.vim/autoload/pathogen.vim
-execute pathogen#infect()
+" Use vim settings, rather then vi settings
+" This must be first, because it changes other options as a side effect.
+set nocompatible
 
-" needed for file-specific plugins to work, see below
-filetype plugin on
-filetype indent on
+" Plugins managed by vim-plug -- see https://github.com/junegunn/vim-plug
+" for commands and more details.
 
-syntax on
-set hlsearch
+" Auto-install vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Specify a directory for vim-plug plugins
+" - Avoid using standard Vim directy names like 'plugin'
+call plug#begin('~/.vim/vim-plug')
+
+Plug 'MarcWeber/vim-addon-commenting'
+Plug 'wincent/command-t'
+Plug 'embear/vim-foldsearch'
+Plug 'tpope/vim-dispatch'
+Plug 'rking/ag.vim'
+Plug 'ervandew/supertab'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ludovicchabant/vim-lawrencium'
+
+" Initialize plugin system
+call plug#end()
+
+" Preferences
+set t_Co=256            " iTerm2 supports 256 color mode
+set ai                  " auto indenting
+set si                  " smart indenting
+syntax on               " syntax highlighting
+filetype plugin on      " use the file type plugins
+filetype indent on      " use the file type indent settings
+
+set showmode            " always show what mode we're currently editing in
+
+set tabstop=4           " a tab is four spaces
+set softtabstop=4       " <BS> removes tab, even if its spaces
+set shiftwidth=4        " number of spaces to use for autoindenting
+set autoindent          " always set autoindent on
+set copyindent          " copy the previous indentation on autoindenting
+
+set showmatch           " set show matching parenthesis
+
+set hlsearch            " highlight search terms
+set incsearch           " show search matches as you type
+
+set mouse=a             " enable using the mouse
+
+set laststatus=2        " always display status line, even when there is only
+                        "   one window
+
+set nobackup            " do not keep backup files
+set noswapfile          " do not write annoying swap files
+
+set wildmenu            " make tab completion for files/buffers act like bash
+set wildmode=list:full  " show a list when pressing tab and complete first full
+                        "   match
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set title               " change the terminal's title
+set visualbell          " don't beep
+set noerrorbells        " don't beep
+
 set path+=./**
 set makeprg=build
 set smartcase
 set ff=unix
-set tabstop=4
 set expandtab
 set number
 set colorcolumn=80
 hi ColorColumn ctermbg=0
-
-" highlight spurious whitespace before the linter does
-highlight ExtraWhitespace ctermbg=lightgreen guibg=lightgreen                   
-match ExtraWhitespace /\s\+$/  
 
 ""Format on save using Prettier
 autocmd BufWrite Pre *.js,*.jsx,*.ts,*.tsx Neoformat
@@ -36,41 +88,113 @@ let g:lightline = {
   \ }
 
 " Set cscope settings
-set cscopetag "Use :cstag instead of :tag, ...
-set csto=1 " ... but search tags before cscope
+"set cscopetag "Use :cstag instead of :tag, ...
+"set csto=1 " ... but search tags before cscope
 
 " Add an F7 key mapping to refresh cscope:
-map <F7> :!cscope -R -b -q <CR>
-   \:cscope reset<CR>
+"map <F7> :!cscope -R -b -q <CR>
+"   \:cscope reset<CR>
 
-if has("cscope")
-    if filereadable("cscope.out")
-        cs add cscope.out
-    endif
-    if filereadable("pycscope.out")
-        cs add pycscope.out
-    endif
-    cs reset
-endif
+"if has("cscope")
+"    if filereadable("cscope.out")
+"        cs add cscope.out
+"    endif
+"    if filereadable("pycscope.out")
+"        cs add pycscope.out
+"    endif
+"    cs reset
+"endif
 
 let g:python_highlight_all = 1
-
-" Set lightline.vim configuration
-set laststatus=2
-
-" backups are a little silly when you're using patches constantly
-set nobackup
-set noswapfile
-
-" Tabs
-set expandtab
-set shiftwidth=4 " Indent by 4
-set smarttab
 
 " Custom mappings
 nnoremap ,<space> :nohlsearch<CR>
 nnoremap <F8> :checktime<CR>
+map <F4> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 
-" Set custom vim commands
-command Swd cd %:h
-command Ssd cd ~/src
+" Tags
+set tags+=tags
+source ~/src/tools/editors/vim/plugin/cscope_maps.vim
+
+nnoremap <C-]> g<C-]>
+vnoremap <C-]> g<C-]>
+nnoremap g] g<C-]>
+vnoremap g] g<C-]>
+
+" use par for 'gq' formatting
+set formatprg=par\ -w80
+
+" __        ___     _ _
+" \ \      / / |__ (_) |_ ___  ___ _ __   __ _  ___ ___
+"  \ \ /\ / /| '_ \| | __/ _ \/ __| '_ \ / _` |/ __/ _ \
+"   \ V  V / | | | | | ||  __/\__ \ |_) | (_| | (_|  __/
+"    \_/\_/  |_| |_|_|\__\___||___/ .__/ \__,_|\___\___|
+"                                 |_|
+"  FIGLET: Whitespace
+"
+
+" highlight spurious whitespace before the linter does
+highlight ExtraWhitespace ctermbg=lightgreen guibg=lightgreen
+match ExtraWhitespace /\s\+$/
+
+" Removes trailing spaces
+function! TrimWhiteSpace()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfunction
+
+nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
+
+autocmd FileWritePre    * :call TrimWhiteSpace()
+autocmd FileAppendPre   * :call TrimWhiteSpace()
+autocmd FilterWritePre  * :call TrimWhiteSpace()
+autocmd BufWritePre     * :call TrimWhiteSpace()
+
+" Auto-select visual region on indent/dedent
+vnoremap < <gv
+vnoremap > >gv
+
+" Auto read when a file is changed
+set autoread
+set updatetime=100
+augroup checktime
+    au!
+    if !has("gui_running")
+        "silent! necessary otherwise throws errors when using command
+        "line window.
+        autocmd BufEnter        * silent! checktime
+        autocmd CursorHold      * silent! checktime
+        autocmd CursorHoldI     * silent! checktime
+        "these two _may_ slow things down. Remove if they do.
+        "autocmd CursorMoved     * silent! checktime
+        "autocmd CursorMovedI    * silent! checktime
+    endif
+augroup END
+
+" See .vim/after/ftpplugin/py.vim
+function GetGooglePythonIndent(lnum)
+  " Indent inside parens.
+  " Align with the open paren unless it is at the end of the line.
+  " E.g.
+  "   open_paren_not_at_EOL(100,
+  "                         (200,
+  "                          300),
+  "                         400)
+  "   open_paren_at_EOL(
+  "       100, 200, 300, 400)
+  call cursor(a:lnum, 1)
+  let [par_line, par_col] = searchpairpos('(\|{\|\[', '', ')\|}\|\]', 'bW',
+        \ "line('.') < " . (a:lnum - s:maxoff) . " ? dummy :"
+        \ . " synIDattr(synID(line('.'), col('.'), 1), 'name')"
+        \ . " =~ '\\(Comment\\|String\\)$'")
+  if par_line > 0
+    call cursor(par_line, 1)
+    if par_col != col("$") - 1
+      return par_col
+    endif
+  endif
+  " Delegate the rest to the original function.
+  return GetPythonIndent(a:lnum)
+endfunction
