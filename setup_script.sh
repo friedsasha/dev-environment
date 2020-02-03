@@ -12,5 +12,8 @@ ln -s $parent_path/ssh/id_ecdsa.pub ~/.ssh/id_ecdsa.pub
 ln -s $parent_path/vim/vimrc ~/.vimrc
 
 ln -s $parent_path/bash/bash_aliases ~/.bash_aliases
+
 ln -s $parent_path/zsh/zshrc ~/.zshrc
 ln -s $parent_path/zsh/zshrc.pre-oh-my-zsh ~/.zshrc.pre-oh-my-zsh
+ln -s $parent_path/ohmyzsh ~/.ohmyzsh
+ln -s $parent_path/oh-my-zsh/custom ~/.ohmyzsh-custom
