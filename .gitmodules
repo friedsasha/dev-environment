@@ -16,3 +16,6 @@
 [submodule "/home/sasha/dev-environment/oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
 	path = /home/sasha/dev-environment/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "/home/sasha/dev-environment/oh-my-zsh/custom/themes/powerlevel9k"]
+	path = /home/sasha/dev-environment/oh-my-zsh/custom/themes/powerlevel9k
+	url = https://github.com/Powerlevel9k/powerlevel9k
