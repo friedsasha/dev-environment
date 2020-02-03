@@ -13,3 +13,6 @@
 [submodule "/home/sasha/dev-environment/oh-my-zsh/custom/plugins/zsh-autosuggestions"]
 	path = /home/sasha/dev-environment/oh-my-zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "/home/sasha/dev-environment/oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+	path = /home/sasha/dev-environment/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
