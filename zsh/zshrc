@@ -10,15 +10,16 @@ export ZSH_CUSTOM="~/.ohmyzsh-custom"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="robbyrussell"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
 
 #POWERLEVEL9K theme settings
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh battery dir)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh battery dir)
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
 # Output time, date, and a symbol from the "Awesome Powerline Font" set
-POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S}"
-POWERLEVEL9K_CONTEXT_TEMPLATE="%n"
-POWERLEVEL9K_DISK_USAGE_ONLY_WARNING=true
+#POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S}"
+#POWERLEVEL9K_CONTEXT_TEMPLATE="%n"
+#POWERLEVEL9K_DISK_USAGE_ONLY_WARNING=true
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -115,16 +116,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-alias ssh-dq8='ssh -t sfriedrich@dq8-c-10g bash -l'
-alias rm-remnants='tools/rm_merge_remnants.sh'
-alias br='cd ~/ && source /home/sasha/.zshrc'
-alias cr='/home/sasha/src/check_run.py'
-alias rgt='/home/sasha/src/tools/red_green.py'
-alias start_webpack='/qumulotools/bin/webpack --progress --colors --display-error-details --watch -d'
-alias start_webpack_dev='/qumulotools/bin/webpack-dev-server --progress --colors --display-error-details -d --env.              proxyPort=8443'
-alias appserver_simnode='build/debug/simnode/package/opt/qumulo/qinternal/appserver/appserver.py --qfsd-port $(simnode/qc status --rest) --cert-file build/tmp/cluster/node1/etc/keys/localhost.crt --key-file build/tmp/cluster/node1/etc/keys/localhost.key --static-path build/appserver/static/ --template-path build/appserver/templates/'
-
-source ~/.zshrc.pre-oh-my-zsh
+#source ~/.zshrc.pre-oh-my-zsh
 
 cd ~/src
 
