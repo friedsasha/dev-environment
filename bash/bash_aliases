@@ -1,6 +1,3 @@
-# system nav and cleanup
-alias src='cd ~/src'
-
 # internal tools
 alias np='~/tools/next-patch'
 alias npp='~/tools/next-patch --prev'
