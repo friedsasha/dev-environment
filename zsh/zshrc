@@ -2,9 +2,9 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="~/.ohmyzsh"
+export ZSH="$HOME/.ohmyzsh"
 
-export ZSH_CUSTOM="~/.ohmyzsh-custom"
+export ZSH_CUSTOM="$HOME/.ohmyzsh-custom"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -117,8 +117,6 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 #source ~/.zshrc.pre-oh-my-zsh
-
-cd ~/src
 
 PATH="/opt/qumulo/toolchain/bin:${PATH}"
 export PYTHONPATH=$PYTHONPATH:"/home/sasha"
