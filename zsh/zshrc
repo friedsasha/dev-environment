@@ -119,4 +119,4 @@ fi
 #source ~/.zshrc.pre-oh-my-zsh
 
 PATH="/opt/qumulo/toolchain/bin:${PATH}"
-export PYTHONPATH=$PYTHONPATH:"/home/sasha"
+export PYTHONPATH=$PYTHONPATH:"$HOME"
