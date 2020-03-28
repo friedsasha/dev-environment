@@ -64,7 +64,7 @@ set wildmode=list:full  " show a list when pressing tab and complete first full
                         "   match
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title               " change the terminal's title
-set visualbell          " don't beep
+set novisualbell        " don't beep
 set noerrorbells        " don't beep
 
 set path+=./**
@@ -144,6 +144,9 @@ match ExtraWhitespace /\s\+$/
 
 " Removes trailing spaces
 function! TrimWhiteSpace()
+    if exists('b:noStripTrailing')
+        return
+    endif
     let l = line(".")
     let c = col(".")
     %s/\s\+$//e
@@ -156,6 +159,8 @@ autocmd FileWritePre    * :call TrimWhiteSpace()
 autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd FileType markdown let b:noStripTrailing=1
 
 " Auto-select visual region on indent/dedent
 vnoremap < <gv

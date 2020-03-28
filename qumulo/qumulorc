@@ -1,6 +1,8 @@
 {
     "build_default_options": {
-    "nfs_cache": "true"
+    "nfs_cache": "true",
+    "linking_cache": "rw",
+    "linking_cache_directory": "/home/sasha/src/build/.qonstruct/cache"
     },
     "build_progress": "colored"
 }

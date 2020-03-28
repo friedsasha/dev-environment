@@ -9,5 +9,5 @@ alias start_webpack='/qumulotools/bin/webpack --progress --colors --display-erro
 alias start_webpack_dev='/qumulotools/bin/webpack-dev-server --progress --colors --display-error-details -d --env.              proxyPort=8443'
 alias appserver_simnode='build/debug/simnode/package/opt/qumulo/qinternal/appserver/appserver.py --qfsd-port $(simnode/qc status --rest) --cert-file build/tmp/cluster/node1/etc/keys/localhost.crt --key-file build/tmp/cluster/node1/etc/keys/localhost.key --static-path build/appserver/static/ --template-path build/appserver/templates/'
 
-# other
-alias ssh-sihang='ssh guest@192.168.194.107'
+#  other
+alias clean-cache='qonstruct/build_cache_tool.py trim --cutoff-time 5_days_ago build/.qonstruct/cache/'
