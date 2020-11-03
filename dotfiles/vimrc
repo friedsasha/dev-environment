@@ -89,24 +89,6 @@ let g:lightline = {
   \     }
   \ }
 
-" Set cscope settings
-"set cscopetag "Use :cstag instead of :tag, ...
-"set csto=1 " ... but search tags before cscope
-
-" Add an F7 key mapping to refresh cscope:
-"map <F7> :!cscope -R -b -q <CR>
-"   \:cscope reset<CR>
-
-"if has("cscope")
-"    if filereadable("cscope.out")
-"        cs add cscope.out
-"    endif
-"    if filereadable("pycscope.out")
-"        cs add pycscope.out
-"    endif
-"    cs reset
-"endif
-
 let g:python_highlight_all = 1
 
 " Custom mappings
@@ -118,8 +100,6 @@ set relativenumber
 nnoremap <F5> :set relativenumber!<CR>:set rnu?<CR>
 
 " Tags
-set tags+=tags
-source ~/src/tools/editors/vim/plugin/cscope_maps.vim
 
 nnoremap <C-]> g<C-]>
 vnoremap <C-]> g<C-]>
