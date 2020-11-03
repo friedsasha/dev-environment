@@ -106,7 +106,7 @@ setopt NO_BEEP
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     branch
-    mercurial
+    git
     zsh-autosuggestions
     zsh-syntax-highlighting
     zsh_reload
