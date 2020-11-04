@@ -16,6 +16,3 @@
 [submodule "zsh-syntax-highlighting"]
 	path = oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule "powerlevel9k"]
-	path = oh-my-zsh/custom/themes/powerlevel9k
-	url = https://github.com/Powerlevel9k/powerlevel9k
