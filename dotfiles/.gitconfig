@@ -1,5 +1,6 @@
 [user]
-	name = Sasha Friedrich
+    name = Sasha Friedrich
+    useConfigOnly = true
 [core]
 	autocrlf = false
 [color]
