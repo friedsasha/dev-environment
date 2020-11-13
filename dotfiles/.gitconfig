@@ -1,0 +1,38 @@
+[user]
+	name = Sasha Friedrich
+[core]
+	autocrlf = false
+[color]
+	ui = auto
+[alias]
+	graph = log --graph --oneline --decorate
+	ff = merge --ff-only
+	zip = archive --format=zip
+	dt = difftool
+	ga = log --oneline --decorate --graph --all
+	gr = log --oneline --decorate --graph
+	co = checkout
+	ci = commit
+	st = status
+	df = diff
+	cam = commit --amend
+	append = commit --amend --no-edit
+	kill-branch = !git push --delete origin "$@" && git branch -d
+[diff]
+	tool = meld
+	algorithm = patience
+	submodule = short
+[color "sh"]
+	branch = yellow bold
+	dirty = red bold
+[push]
+	default = current
+	recurseSubmodules = check
+[merge]
+	ff = false
+	conflictStyle = diff3
+[fetch]
+	prune = true
+	writeCommitGraph = true
+[pull]
+	rebase = false
