@@ -17,21 +17,25 @@ endif
 call plug#begin('~/.vim/vim-plug')
 
 Plug 'MarcWeber/vim-addon-commenting'
-Plug 'wincent/command-t'
-Plug 'embear/vim-foldsearch'
-Plug 'tpope/vim-dispatch'
-Plug 'rking/ag.vim'
-Plug 'ervandew/supertab'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ludovicchabant/vim-lawrencium'
+Plug 'embear/vim-foldsearch'
+Plug 'ervandew/supertab'
 Plug 'itchyny/lightline.vim'
+Plug 'lifepillar/vim-solarized8'
+Plug 'ludovicchabant/vim-lawrencium'
+Plug 'rking/ag.vim'
+Plug 'tpope/vim-dispatch'
 Plug 'vim-python/python-syntax'
+Plug 'wincent/command-t'
 
 " Initialize plugin system
 call plug#end()
 
 " Preferences
-set t_Co=256            " iTerm2 supports 256 color mode
+set termguicolors
+set background=light
+colorscheme solarized8
+"set t_Co=256            " iTerm2 supports 256 color mode
 set ai                  " auto indenting
 set si                  " smart indenting
 syntax on               " syntax highlighting
