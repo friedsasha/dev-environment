@@ -32,13 +32,19 @@ Plug 'wincent/command-t'
 call plug#end()
 
 " Preferences
-set termguicolors
+syntax on               " syntax highlighting
+set termguicolors	" real-color
 set background=light
 colorscheme solarized8
-"set t_Co=256            " iTerm2 supports 256 color mode
+
+" Fix for vim colorization with tmux...??!!
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set t_Co=256            " iTerm2 supports 256 color mode
+
+
 set ai                  " auto indenting
 set si                  " smart indenting
-syntax on               " syntax highlighting
 filetype plugin on      " use the file type plugins
 filetype indent on      " use the file type indent settings
 
