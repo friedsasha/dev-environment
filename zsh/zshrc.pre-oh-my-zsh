@@ -76,6 +76,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias pblack='black -l 120 -t py38'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

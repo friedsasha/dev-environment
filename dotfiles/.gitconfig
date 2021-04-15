@@ -13,12 +13,15 @@
 	ga = log --oneline --decorate --graph --all
 	gr = log --oneline --decorate --graph
 	co = checkout
-	ci = commit
+    ci = commit
+    cp = cherry-pick
 	st = status
-	df = diff
+    df = diff
+    dfc = diff --cached
 	cam = commit --amend
 	append = commit --amend --no-edit
-	kill-branch = !git push --delete origin "$@" && git branch -d
+    kill-branch = !git push --delete origin "$@" && git branch -d
+    pl = log --reverse -p
 [diff]
 	tool = meld
 	algorithm = patience

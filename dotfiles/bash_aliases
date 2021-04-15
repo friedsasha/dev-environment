@@ -11,3 +11,7 @@ alias appserver_simnode='build/debug/simnode/package/opt/qumulo/qinternal/appser
 
 #  other
 alias clean-cache='qonstruct/build_cache_tool.py trim --cutoff-time 5_days_ago build/.qonstruct/cache/'
+
+
+#first-mode
+
