@@ -5,6 +5,7 @@ ln -s $parent_path/ssh/config ~/.ssh/config
 
 ln -s $parent_path/dotfiles/vimrc ~/.vimrc
 ln -s $parent_path/dotfiles/zshrc ~/.vimrc
+ln -s $parent_path/dotfiles/tmux/tmux.conf ~/.tmux.conf
 
 ln -s $parent_path/dotfiles/bash_aliases ~/.bash_aliases
 

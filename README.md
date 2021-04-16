@@ -38,3 +38,19 @@ font:
     family: "MesloLGS NF"
 ```
 (Symbols are not available in mononoki).
+
+Install pyenv:
+```
+$ curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+```
+Ensure the following is in your .zshrc or similar:
+```
+export PATH="~/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+Install the latest version of python
+```
+pyenv install 3.8.3 -v
+pyenv global 3.8.3
+```
