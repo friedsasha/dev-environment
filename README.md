@@ -54,3 +54,28 @@ Install the latest version of python
 pyenv install 3.8.3 -v
 pyenv global 3.8.3
 ```
+
+# SSH Setup
+To ssh into a remote box without having to provide your password, add your local machine's public key to the ~/.ssh/authorized_keys file on the remote box:
+First, generate an ssh key on your local machine:
+```
+$ ssh-keygen -t ed25519
+```
+Load then key into memory:
+```
+$ eval "$(ssh-agent -s)"
+$ ssh-add ~/.ssh/id_ed25519
+```
+Then add the public key to the remote machine's authorized_keys file:  
+```
+$ cat ~/.ssh/id_rsa.pub | ssh USER@HOST "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+```
+Ensure the ssh permissions are correct on the remote machine:
+```
+$ chmod 700 .ssh
+$ chmod 600 authorized_keys
+```
+To get the numerical chmod value of a file (Linux):
+```
+$ stat --format '%a' <file>
+```
