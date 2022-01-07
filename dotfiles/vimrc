@@ -25,6 +25,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'ludovicchabant/vim-lawrencium'
 Plug 'rking/ag.vim'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
 Plug 'vim-python/python-syntax'
 Plug 'wincent/command-t'
 
