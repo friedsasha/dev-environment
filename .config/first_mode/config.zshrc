@@ -4,7 +4,8 @@ alias cmake-ppc-build="cmake --build build --parallel $(nproc --all)"
 alias cmake-ppc-install="cmake --install build"
 
 export TONKA_WORKSPACE="/data/sasha/tonka"
-export PYTHONPATH=$TONKA_WORKSPACE/tonkatime/build/tonkatime-staging/python/venv-ppc
+export PROJECT_WORKSPACE="/data/sasha/tonka"
+export PYTHONPATH=$TONKA_WORKSPACE/tonkatime/build-ppc/tonkatime-staging/python/venv-ppc
 export PATH="/home/sasha/.pyenv/bin:$PATH"
 
 # Activate virtualenvs automatically upon entering/leaving directories
