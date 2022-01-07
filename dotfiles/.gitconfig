@@ -22,6 +22,8 @@
 	append = commit --amend --no-edit
     kill-branch = !git push --delete origin "$@" && git branch -d
     pl = log --reverse -p
+    graphy = log --graph --oneline --decorate
+    subinit = submodule update --init --recursive
 [diff]
 	tool = meld
 	algorithm = patience
