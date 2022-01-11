@@ -1,4 +1,3 @@
-export GITHUB_PAT="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"
 export XILINX_SDK_PATH="/data/tools/Xilinx/SDK/2019.1"
 export TONKA_WORKSPACE="/data/sasha/tonka"
 export PROJECT_WORKSPACE="/data/sasha/tonka"
