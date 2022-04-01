@@ -18,6 +18,7 @@ export ZSH_CUSTOM="$HOME/.ohmyzsh-custom"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="zeta"
 
 autoload -U compinit
 compinit
@@ -104,7 +105,11 @@ setopt NO_BEEP
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     branch
+    copybuffer
+    copyfile
     git
+    history
+    sudo
     zsh-autosuggestions
     zsh-syntax-highlighting
     zsh_reload
