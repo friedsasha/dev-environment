@@ -112,7 +112,6 @@ plugins=(
     sudo
     zsh-autosuggestions
     zsh-syntax-highlighting
-    zsh_reload
 )
 
 source $ZSH/oh-my-zsh.sh
