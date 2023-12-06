@@ -102,6 +102,7 @@ map <F4> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 " Make the enter key do something useful
 noremap <CR> o<Esc>
 noremap <S-CR> O<Esc>
+autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 
 set relativenumber
 nnoremap <F5> :set relativenumber!<CR>:set rnu?<CR>

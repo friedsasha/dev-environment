@@ -1,2 +1,80 @@
+Host *ppc
+  HostName 10.10.10.101
+  User root
+  StrictHostKeyChecking=no
+  UserKnownHostsFile=/dev/null
+
+Host github.com
+    User git
+    # See note below
+    ForwardAgent no
+    ForwardX11Trusted no
+
+Host spectre
+  HostName 10.100.100.101
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/spectre
+  ForwardX11 yes
+
+Host marvin
+  HostName 192.168.1.42
+
+Host marvin-t
+  HostName 100.104.175.90
+
+Host marvin-r
+  HostName 10.196.244.42
+
+Host gnk
+  HostName 10.10.200.50
+
+Host bigdig
+  HostName 10.10.200.60
+
+Host mud
+  HostName 10.100.100.70
+
+Host geoff
+  HostName 10.10.200.80
+  User tonka
+
+Host chop
+  HostName 10.10.200.110
+
+Host tatooine
+  HostName 10.10.200.116
+
+Host tatooine-ppc
+  ProxyJump tatooine
+
+Host arrakis
+    HostName 10.10.200.101
+
+Host arrakis-ppc
+  ProxyJump arrakis
+
+Host ike
+  HostName 10.10.200.106
+  User tonka
+
+Host bd1
+  HostName 10.10.200.107
+  User tonka
+
+Host flattruck
+  HostName 10.10.10.101
+  ProxyJump bd1
+  User root
+  StrictHostKeyChecking=no
+  UserKnownHostsFile=/dev/null
+
+Host buildbot
+  HostName 10.10.128.82
+
 Host *
-  AddKeysToAgent yes
+  User sasha
+  ServerAliveInterval 60
+
+  # WARNING: This option should only be used when connecting to hosts that you
+  # trust! Note that the entry for github explicitly disables it.
+  ForwardAgent yes

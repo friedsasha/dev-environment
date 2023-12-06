@@ -112,7 +112,7 @@ plugins=(
     sudo
     zsh-autosuggestions
     zsh-syntax-highlighting
-    zsh_reload
+    tmux
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -148,8 +148,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 export LESS=-x4RSX
-export TERM=xterm-256color
+export TERM=screen-256color
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source $HOME/dev-environment/.config/first_mode/config.zshrc
