@@ -7,6 +7,7 @@ tap "buo/cask-upgrade"
 cask "alacritty", args: { 'no-quarantine': true }
 cask "firefox"
 cask "font-mononoki"
+cask "font-fontawesome"
 cask "keepassxc"
 cask "mactex"
 cask "signal"
