@@ -1,8 +1,74 @@
-alt_send_esc = true
-background_opacity = 0.85
+[general]
+live_config_reload = true
 
 [colors]
 draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0x545d65"
+blue = "0x0bc7e3"
+cyan = "0x97b9c0"
+green = "0x739da8"
+magenta = "0xc6e8f1"
+red = "0xdd998a"
+white = "0xffe9d7"
+yellow = "0xfedaae"
+
+[colors.cursor]
+cursor = "0xfeaf3c"
+text = "0x061822"
+
+[colors.normal]
+black = "0x1d485f"
+blue = "0x255a62"
+cyan = "0x5fb1c2"
+green = "0x008eab"
+magenta = "0x77dbf4"
+red = "0xdb662d"
+white = "0xe5c49e"
+yellow = "0xfeaf3c"
+
+[colors.primary]
+background = "0x061923"
+foreground = "0xe5c49e"
+
+[colors.selection]
+background = "0x265b75"
+text = "0xffe9d7"
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[font]
+size = 12.0
+#use_thin_strokes = false
+
+[font.bold]
+style = "Bold"
+
+[font.bold_italic]
+style = "Bold Italic"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+style = "Italic"
+
+[font.normal]
+family = "mononoki"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[[keyboard.bindings]]
+action = "CreateNewWindow"
+key = "N"
+mods = "Command"
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
@@ -491,77 +557,100 @@ chars = """
 """
 key = "NumpadEnter"
 
-[general]
-live_config_reload = true
+[mouse]
+hide_when_typing = false
 
 [[mouse.bindings]]
 action = "PasteSelection"
 mouse = "Middle"
 
-[colors.bright]
-black = "0x595959"
-blue = "0x005F87"
-cyan = "0x53A6A6"
-green = "0x008000"
-magenta = "0xAD7FA8"
-red = "0xBF0000"
-white = "0xEEEEEE"
-yellow = "0xD4AF37"
-
-[colors.normal]
-black = "0x262626"
-blue = "0x0000FF"
-cyan = "0x408080"
-green = "0x006600"
-magenta = "0x75507B"
-red = "0x990000"
-white = "0xBFBFBF"
-yellow = "0xB78727"
-
-[colors.primary]
-background = "0xffffff"
-foreground = "0x000000"
-
-[cursor]
-style = "Block"
-unfocused_hollow = true
-
-[font]
-size = 12.0
-use_thin_strokes = false
-
-[font.bold]
-style = "Bold"
-
-[font.bold_italic]
-style = "Bold Italic"
-
-[font.glyph_offset]
-x = 0
-y = 0
-
-[font.italic]
-style = "Italic"
-
-[font.normal]
-family = "mononoki"
-style = "Regular"
-
-[font.offset]
-x = 0
-y = 0
-
-[mouse]
-hide_when_typing = false
-
-[mouse.double_click]
-threshold = 300
-
-[mouse.triple_click]
-threshold = 300
-
-[mouse.url]
-modifiers = "None"
+#[schemes.seashells.bright]
+#black = "0x545d65"
+#blue = "0x0bc7e3"
+#cyan = "0x97b9c0"
+#green = "0x739da8"
+#magenta = "0xc6e8f1"
+#red = "0xdd998a"
+#white = "0xffe9d7"
+#yellow = "0xfedaae"
+#
+#[schemes.seashells.cursor]
+#cursor = "0xfeaf3c"
+#text = "0x061822"
+#
+#[schemes.seashells.normal]
+#black = "0x1d485f"
+#blue = "0x255a62"
+#cyan = "0x5fb1c2"
+#green = "0x008eab"
+#magenta = "0x77dbf4"
+#red = "0xdb662d"
+#white = "0xe5c49e"
+#yellow = "0xfeaf3c"
+#
+#[schemes.seashells.primary]
+#background = "0x061923"
+#foreground = "0xe5c49e"
+#
+#[schemes.seashells.selection]
+#background = "0x265b75"
+#text = "0xffe9d7"
+#
+#[schemes.solarized_dark.bright]
+#black = "#586e75"
+#blue = "#839496"
+#cyan = "#93a1a1"
+#green = "#586e75"
+#magenta = "#6c71c4"
+#red = "#cb4b16"
+#white = "#fdf6e3"
+#yellow = "#657b83"
+#
+#[schemes.solarized_dark.cursor]
+#cursor = "#839496"
+#text = "#002b36"
+#
+#[schemes.solarized_dark.normal]
+#black = "#073642"
+#blue = "#268bd2"
+#cyan = "#2aa198"
+#green = "#859900"
+#magenta = "#d33682"
+#red = "#dc322f"
+#white = "#eee8d5"
+#yellow = "#b58900"
+#
+#[schemes.solarized_dark.primary]
+#background = "#002b36"
+#foreground = "#839496"
+#
+#[schemes.solarized_light.bright]
+#black = "#002b36"
+#blue = "#839496"
+#cyan = "#93a1a1"
+#green = "#586e75"
+#magenta = "#6c71c4"
+#red = "#cb4b16"
+#white = "#fdf6e3"
+#yellow = "#657b83"
+#
+#[schemes.solarized_light.cursor]
+#cursor = "#657b83"
+#text = "#fdf6e3"
+#
+#[schemes.solarized_light.normal]
+#black = "#073642"
+#blue = "#268bd2"
+#cyan = "#2aa198"
+#green = "#859900"
+#magenta = "#d33682"
+#red = "#dc322f"
+#white = "#eee8d5"
+#yellow = "#b58900"
+#
+#[schemes.solarized_light.primary]
+#background = "#fdf6e3"
+#foreground = "#657b83"
 
 [scrolling]
 history = 10000
@@ -569,13 +658,18 @@ multiplier = 3
 
 [selection]
 save_to_clipboard = false
-semantic_escape_chars = ''',│`|:"' ()[]{}<>	'''
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[terminal.shell]
+args = ["--login"]
+program = "/bin/zsh"
 
 [window]
 decorations = "full"
 dynamic_padding = false
 dynamic_title = true
 startup_mode = "Windowed"
+opacity = 0.85
 
 [window.dimensions]
 columns = 0
@@ -584,5 +678,3 @@ lines = 0
 [window.padding]
 x = 2
 y = 2
-
-[keyboard]
