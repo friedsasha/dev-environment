@@ -1,7 +1,9 @@
-#!/run/current-system/sw/bin/bash
+#!/bin/bash
 parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
 ln -s $parent_path/ssh/config ~/.ssh/config
+ln -s $parent_path/dotfiles/.gitconfig ~/.gitconfig
+ln -s $parent_path/dotfiles/mac/Brewfile ~/Brewfile
 
 ln -s $parent_path/dotfiles/vimrc ~/.vimrc
 ln -s $parent_path/dotfiles/zshrc ~/.zshrc

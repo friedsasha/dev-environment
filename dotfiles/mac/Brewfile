@@ -1,0 +1,49 @@
+cask_args appdir: "/Applications"
+
+tap "homebrew/bundle"
+tap "homebrew/services"
+tap "buo/cask-upgrade"
+
+cask "alacritty", args: { 'no-quarantine': true }
+cask "firefox"
+cask "font-mononoki"
+cask "keepassxc"
+cask "mactex"
+cask "signal"
+cask "spotify"
+cask "xquartz"
+
+# System
+brew "binutils"
+brew "coreutils"
+brew "curl"
+brew "dnstracer"
+brew "git"
+brew "htop"
+brew "jq"
+brew "mas"
+brew "neovim"
+brew "nmap"
+brew "openssh"
+brew "pidof"
+brew "pstree"
+brew "rlwrap"
+brew "rsync"
+brew "screen"
+brew "socat"
+brew "ssh-copy-id"
+brew "syncthing"
+brew "tmux"
+brew "tpm"
+brew "tree"
+brew "wget"
+brew "xz"
+
+
+# Dev
+brew "cmake"
+brew "ninja"
+brew "python"
+
+# App Store
+# mas "xcode", id: 497799835

@@ -1,23 +1,14 @@
-Dev environment setup. Needs a lot of work
+# Mac Setup
 
-# Dev Machine Setup
+Clone this (public) repo. Run the setup_script.sh. This will symlink dotfiles including your gitconfig.
+Initialize submodules:
+```git subinit```
 
--Install terminal emulator like alacritty
-(Do this on local machine if remoting in to a dev box)
-```
-touch ~/.config/alacritty/alacritty.yml
-```
-Copy contents from alacritty.yml in this repo.
+Install system and dev applications via Homebrew. The Brewfile should be symlinked to `~/Brewfile`.
+```brew bundle install```
 
+# Additional Setup
 Install fonts like [mononoki](https://madmalik.github.io/mononoki/).
-
-On the dev machine, which may be remote, clone this repo. 
-After cloning, from the root of the repo run:
-```
-git submodule update --init
-```
-This will clone submodules like oh-my-zsh and plugins.
-Then run setup_script.sh. This will link various dot files to ones in this repo.
 
 Vim plugins should be installed automagically after vim is opened for the first
 time.
