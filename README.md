@@ -1,11 +1,15 @@
 # Mac Setup
 
-Clone this (public) repo. Run the setup_script.sh. This will symlink dotfiles including your gitconfig.
+Clone this (public) repo. Run the `setup_script.sh`. This will symlink dotfiles including your gitconfig.
 Initialize submodules:
-```git subinit```
+```
+git subinit
+````
 
 Install system and dev applications via Homebrew. The Brewfile should be symlinked to `~/Brewfile`.
-```brew bundle install```
+```
+brew bundle install
+```
 
 # Additional Setup
 Install fonts like [mononoki](https://madmalik.github.io/mononoki/).
