@@ -1,6 +1,4 @@
-#window.option_as_alt = true # true by default
 live_config_reload = true
-"window.opacity" = 0.85
 
 [colors]
 draw_bold_text_with_bright_colors = true
@@ -565,12 +563,6 @@ hide_when_typing = false
 action = "PasteSelection"
 mouse = "Middle"
 
-[mouse.double_click]
-threshold = 300
-
-[mouse.triple_click]
-threshold = 300
-
 [schemes.seashells.bright]
 black = "0x545d65"
 blue = "0x0bc7e3"
@@ -676,6 +668,7 @@ decorations = "full"
 dynamic_padding = false
 dynamic_title = true
 startup_mode = "Windowed"
+opacity = 0.85
 
 [window.dimensions]
 columns = 0
