@@ -2,7 +2,9 @@
     name = Sasha Friedrich
     useConfigOnly = true
 [core]
-	autocrlf = false
+    autocrlf = false
+    preloadindex = true
+	editor = nvim
 [color]
 	ui = auto
 [alias]
@@ -24,6 +26,7 @@
     pl = log --reverse -p
     graphy = log --graph --oneline --decorate
     subinit = submodule update --init --recursive
+    lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
 [diff]
 	tool = meld
 	algorithm = patience
@@ -35,10 +38,12 @@
 	default = current
 	recurseSubmodules = check
 [merge]
-	ff = false
+    #ff = false
 	conflictStyle = diff3
 [fetch]
 	prune = true
 	writeCommitGraph = true
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
